@@ -1,11 +1,11 @@
-<form (ngSubmit)="onSubmit()" aria-label="Submit feedback">
+<form [formGroup]="addFeedbackForm" (ngSubmit)="onSubmit()" aria-label="Submit feedback">
   <mat-form-field appearance="fill" class="feedback-field">
     <mat-label>Your Name</mat-label>
-    <input matInput id="user" [(ngModel)]="user" name="user" aria-required="true"/>
+    <input matInput id="user" formControlName="user" name="user" aria-required="true"/>
   </mat-form-field>
   <mat-form-field appearance="fill" class="feedback-field">
     <mat-label>Sentiment</mat-label>
-    <mat-select id="sentiment" [(ngModel)]="sentiment" name="sentiment" aria-required="true">
+    <mat-select id="sentiment" formControlName="sentiment" name="sentiment" aria-required="true">
       <mat-option value="positive">Positive 😊</mat-option>
       <mat-option value="neutral">Neutral 😐</mat-option>
       <mat-option value="negative">Negative 😞</mat-option>
