@@ -41,6 +41,8 @@ export class FeedbackForm {
     this.feedbackService.addFeedback(newFeedback);
     this.submitted = true;
     this.addFeedbackForm.reset();
+    this.addFeedbackForm.markAsPristine();
+    this.addFeedbackForm.markAsUntouched();
     setTimeout(() => this.submitted = false, 4000);
   }
 }
