@@ -2,6 +2,16 @@
   <mat-form-field appearance="fill" class="feedback-field">
     <mat-label>Your Name</mat-label>
     <input matInput id="user" formControlName="user" name="user" aria-required="true"/>
+    @if(addFeedbackForm.get('user')?.touched && addFeedbackForm.get('user')?.hasError('required')) {
+      <mat-error>
+        User is required
+      </mat-error>
+    }
+    @if(addFeedbackForm.get('user')?.touched && addFeedbackForm.get('user')?.hasError('minlength')) {
+      <mat-error>
+        User must be at least 3 characters
+      </mat-error>
+    }
   </mat-form-field>
   <mat-form-field appearance="fill" class="feedback-field">
     <mat-label>Sentiment</mat-label>
@@ -14,6 +24,16 @@
   <mat-form-field appearance="fill" class="feedback-field">
     <mat-label>Comment</mat-label>
     <input matInput id="comment" formControlName="comment" name="comment" aria-required="true"/>
+    @if(addFeedbackForm.get('comment')?.touched && addFeedbackForm.get('comment')?.hasError('required')) {
+      <mat-error>
+        Comment is required
+      </mat-error>
+    }
+    @if(addFeedbackForm.get('comment')?.touched && addFeedbackForm.get('comment')?.hasError('minlength')) {
+      <mat-error>
+        Comment must be at least 15 characters
+      </mat-error>
+    }
   </mat-form-field> 
   <button [disabled]="!addFeedbackForm.valid" mat-raised-button color="primary" type="submit" class="submit-btn">Submit</button>
 </form>
