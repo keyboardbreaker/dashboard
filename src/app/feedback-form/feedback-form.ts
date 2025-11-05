@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -25,9 +25,9 @@ export class FeedbackForm {
   submitted = false;
 
   addFeedbackForm = this.formBuilder.group({
-    user: this.formBuilder.control<string>(''),
-    sentiment: this.formBuilder.control<Sentiment>('positive'),
-    comment: this.formBuilder.control<string>(''),
+    user: this.formBuilder.control<string>('', [Validators.required, Validators.minLength(3)]),
+    sentiment: this.formBuilder.control<Sentiment>('positive', [Validators.required]),
+    comment: this.formBuilder.control<string>('', [Validators.required, Validators.minLength(3)]),
   })
 
   onSubmit() {
