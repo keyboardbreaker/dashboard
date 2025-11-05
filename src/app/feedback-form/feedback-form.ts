@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NonNullableFormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -21,7 +21,7 @@ import { L } from '@angular/cdk/keycodes';
 
 export class FeedbackForm {
   private feedbackService: IFeedbackService = inject(FEEDBACK_SERVICE_TOKEN);
-  private formBuilder: FormBuilder = inject(FormBuilder);
+  private formBuilder: NonNullableFormBuilder = inject(NonNullableFormBuilder);
   submitted: boolean = false;
 
   addFeedbackForm = this.formBuilder.group({
