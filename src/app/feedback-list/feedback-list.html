@@ -1,0 +1,19 @@
+<div aria-label="Feedback list">
+  @for (entry of feedbackEntries$ | async; track entry.id) {
+    <mat-card class="feedback-entry-card">
+      <div class="feedback-entry-header">
+        <span class="sentiment-icon" [attr.aria-label]="'Sentiment: ' + entry.sentiment">
+          {{ getSentimentIcon(entry.sentiment) }}
+        </span>
+        <strong>{{ entry.user }}</strong>
+        <small class="feedback-date">{{ entry.date }}</small>
+      </div>
+      <div class="feedback-comment">
+        @if (entry.score !== undefined) {
+          <span class="feedback-score">{{ entry.score.toFixed(2) }}&nbsp;</span>
+        }
+        {{ entry.comment }}
+      </div>
+    </mat-card>
+  }
+</div>

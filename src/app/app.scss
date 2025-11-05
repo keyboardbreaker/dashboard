@@ -1,0 +1,41 @@
+.app-main {
+  background: #e8f5e9;
+  min-height: 100vh;
+  padding: 2em;
+}
+.app-header {
+  background: #a5d6a7;
+  color: #2e7d32;
+  margin-bottom: 2em;
+  font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+  padding: 1em 1.5em;
+}
+.app-content {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  height: 70vh;
+}
+.feedback-list-section {
+  flex: 2;
+  min-width: 0;
+  height: 100%;
+}
+.feedback-list-card {
+  background: #a5d6a7;
+  color: #2e7d32;
+  height: 100%;
+  overflow-y: auto;
+  padding: 1em 1.5em;
+}
+.feedback-form-section {
+  flex: 1;
+  position: sticky;
+  top: 2em;
+  align-self: flex-start;
+}
+.feedback-form-card {
+  background: #dcedc8;
+  color: #558b2f;
+  padding: 1em 1.5em;
+}

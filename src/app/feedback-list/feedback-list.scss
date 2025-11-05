@@ -1,0 +1,22 @@
+
+.feedback-entry-card {
+  margin-bottom: 1em;
+  background: #c8e6c9;
+  color: #33691e;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+}
+.feedback-entry-header {
+  display: flex;
+  align-items: center;
+}
+.sentiment-icon {
+  font-size: 2em;
+  margin-right: 0.5em;
+}
+.feedback-date {
+  margin-left: auto;
+}
+.feedback-comment {
+  margin-top: 0.5em;
+}

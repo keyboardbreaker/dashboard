@@ -1,0 +1,19 @@
+<main class="app-main">
+  <mat-card class="app-header">
+    <h1>User Feedback Dashboard</h1>
+  </mat-card>
+  <div class="app-content">
+    <section aria-labelledby="feedback-list-title" class="feedback-list-section">
+      <mat-card class="feedback-list-card">
+        <h2 id="feedback-list-title">Feedback Entries</h2>
+        <app-feedback-list />
+      </mat-card>
+    </section>
+    <section aria-labelledby="feedback-form-title" class="feedback-form-section">
+      <mat-card class="feedback-form-card">
+        <h2 id="feedback-form-title">Submit New Feedback</h2>
+        <app-feedback-form />
+      </mat-card>
+    </section>
+  </div>
+</main>

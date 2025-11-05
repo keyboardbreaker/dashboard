@@ -1,0 +1,31 @@
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+	background: #e8f5e9;
+	color: #2e7d32;
+	font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1, h2 {
+	color: #33691e;
+}
+
+mat-card {
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+}
+
+button, .mat-button {
+	background: #8bc34a;
+	color: #fff;
+	border-radius: 4px;
+	font-weight: bold;
+}
+
+input, textarea, select, .mat-input-element {
+	background: #f1f8e9;
+	border: 1px solid #a5d6a7;
+	border-radius: 4px;
+	padding: 0.5em;
+}

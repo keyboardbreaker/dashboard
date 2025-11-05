@@ -1,0 +1,27 @@
+.feedback-field {
+  width: 100%;
+  background: #f1f8e9;
+}
+.submit-btn {
+  background: #8bc34a;
+  color: #fff;
+}
+.feedback-success {
+  margin-top: 1em;
+  color: #388e3c;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+}
+label {
+  font-weight: bold;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  align-self: start;
+}
