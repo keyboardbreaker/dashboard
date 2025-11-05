@@ -15,7 +15,7 @@
     <mat-label>Comment</mat-label>
     <input matInput id="comment" formControlName="comment" name="comment" aria-required="true"/>
   </mat-form-field> 
-  <button mat-raised-button color="primary" type="submit" class="submit-btn">Submit</button>
+  <button [disabled]="!addFeedbackForm.valid" mat-raised-button color="primary" type="submit" class="submit-btn">Submit</button>
 </form>
 @if (submitted) {
   <div aria-live="polite" class="feedback-success">Thank you for your feedback!</div>

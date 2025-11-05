@@ -21,8 +21,8 @@ import { L } from '@angular/cdk/keycodes';
 
 export class FeedbackForm {
   private feedbackService: IFeedbackService = inject(FEEDBACK_SERVICE_TOKEN);
-  private formBuilder = inject(FormBuilder);
-  submitted = false;
+  private formBuilder: FormBuilder = inject(FormBuilder);
+  submitted: boolean = false;
 
   addFeedbackForm = this.formBuilder.group({
     user: this.formBuilder.control<string>('', [Validators.required, Validators.minLength(3)]),
