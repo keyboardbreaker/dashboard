@@ -11,6 +11,10 @@
       <mat-option value="negative">Negative 😞</mat-option>
     </mat-select>
   </mat-form-field>
+  <mat-form-field appearance="fill" class="feedback-field">
+    <mat-label>Comment</mat-label>
+    <input matInput id="comment" formControlName="comment" name="comment" aria-required="true"/>
+  </mat-form-field> 
   <button mat-raised-button color="primary" type="submit" class="submit-btn">Submit</button>
 </form>
 @if (submitted) {

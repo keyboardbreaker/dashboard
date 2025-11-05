@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FEEDBACK_SERVICE_TOKEN, IFeedbackService } from '../interfaces/feedback.service.interface';
 import { Feedback } from '../models/feedback.model';
 import { Sentiment } from '../models/sentiment.model';
+import { L } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-feedback-form',
@@ -24,8 +25,9 @@ export class FeedbackForm {
   submitted = false;
 
   addFeedbackForm = this.formBuilder.group({
-    user: [''],
-    sentiment: this.formBuilder.control<Sentiment>('positive')
+    user: this.formBuilder.control<string>(''),
+    sentiment: this.formBuilder.control<Sentiment>('positive'),
+    comment: this.formBuilder.control<string>(''),
   })
 
   onSubmit() {
@@ -33,12 +35,12 @@ export class FeedbackForm {
       id: 0,
       user: this.addFeedbackForm.get('user')!.value as string,
       sentiment: this.addFeedbackForm.get('sentiment')!.value as Sentiment,
-      date: ''
+      date: '',
+      comment: this.addFeedbackForm.get('comment')!.value as string,
     };
     this.feedbackService.addFeedback(newFeedback);
     this.submitted = true;
-    this.addFeedbackForm.get('user')?.reset();
-    this.addFeedbackForm.get('sentiment')?.reset();
+    this.addFeedbackForm.reset();
     setTimeout(() => this.submitted = false, 4000);
   }
 }
