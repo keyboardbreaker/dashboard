@@ -5,6 +5,7 @@ import { FeedbackForm } from './feedback-form';
 import { FEEDBACK_SERVICE_TOKEN, IFeedbackService } from '../interfaces/feedback.service.interface';
 import { Observable } from 'rxjs';
 import { Feedback } from '../models/feedback.model';
+import { provideHttpClient } from '@angular/common/http';
 
 const mockFeedbackService: IFeedbackService = {
 	feedbacks$: new Observable<Feedback[]>(),
@@ -21,6 +22,7 @@ describe('FeedbackFormComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, FeedbackForm],
       providers: [
+        provideHttpClient(),
         { provide: FEEDBACK_SERVICE_TOKEN, useValue: mockFeedbackService }
       ]
     }).compileComponents();
