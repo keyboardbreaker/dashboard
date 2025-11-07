@@ -4,6 +4,7 @@ import { Observable, retry, catchError, of, map } from 'rxjs';
 import { SentimentResponse } from '../models/sentiment-response.model';
 import { ISentimentService } from '../interfaces/sentiment.service.interface';
 import { environment } from '../../environments/environment';
+import { SentimentRequest } from '../models/sentiment-request.model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,9 @@ export class SentimentService implements ISentimentService{
       'Content-Type': 'application/json',
     });
 
-    return this.http.post<SentimentResponse>(`${this.apiUrl}`, { text }, { headers }).pipe(
+		const body: SentimentRequest = { text };
+
+    return this.http.post<SentimentResponse>(`${this.apiUrl}`, body, { headers }).pipe(
         retry({ count: 3, delay: (error, retryCount) => of(retryCount * 500) }),
         catchError((error: HttpErrorResponse) => {
 					console.error('Sentiment API failed:', error.message);
