@@ -66,6 +66,11 @@ export class FeedbackForm implements OnInit {
     this.addFeedbackForm.reset();
     this.addFeedbackForm.markAsPristine();
     this.addFeedbackForm.markAsUntouched();
+
+    Object.keys(this.addFeedbackForm.controls).forEach((key) => {
+      const control = this.addFeedbackForm.get(key);
+      control?.setErrors(null);
+    });
     setTimeout(() => (this.submitted = false), 4000);
   }
 }
